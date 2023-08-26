@@ -1,0 +1,34 @@
+﻿@model CryptoPairs.Models.CryptoCurrencyViewModel
+<link rel="stylesheet" href="~/css/site.css" />
+<h2>Крипто пары</h2>
+
+<p>Показано @((Model.CurrentPage - 1) * 20 + Model.Pairs.Count()) из @Model.TotalCount</p>
+
+<div class="main-container">
+<ul>
+	@foreach (var pair in Model.Pairs)
+	{
+		<li>@pair</li>
+	}
+</ul>
+	</div>
+
+<div class="pagination">
+	@if (Model.TotalPages > 1)
+	{
+		<div class="pagination">
+			@if (Model.TotalPages > 1)
+			{
+				<ul class="pagination">
+					@foreach (var pageNumber in ViewData["VisiblePages"] as IEnumerable<int>)
+					{
+						<li class="page-item @(pageNumber == Model.CurrentPage ? "active" : "")">
+							<a class="page-link" href="@Url.Action("Index", "CryptoCurrency", new { page = pageNumber })">@pageNumber</a>
+						</li>
+					}
+				</ul>
+			}
+		</div>
+		
+	}
+</div>
