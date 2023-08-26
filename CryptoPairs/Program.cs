@@ -1,5 +1,4 @@
 using CryptoPairs.Intarfaces;
-using CryptoPairs.Models;
 using CryptoPairs.Services;
 
 namespace CryptoPairs
@@ -18,13 +17,9 @@ namespace CryptoPairs
 
 			builder.Services.AddTransient<IPairsProvider>(provider => new PairsProvider(cryptoCurrencies));
 
-
 			var app = builder.Build();
 
 			app.UseStaticFiles();
-			//app.UseRouting();
-
-			//app.UseAuthorization();
 
 			app.MapControllerRoute(
 				name: "default",

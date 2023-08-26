@@ -1,5 +1,4 @@
-﻿
-using CryptoPairs.Intarfaces;
+﻿using CryptoPairs.Intarfaces;
 using CryptoPairs.Models;
 using Microsoft.AspNetCore.Mvc;
 

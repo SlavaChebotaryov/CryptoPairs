@@ -1,6 +1,4 @@
 ﻿using CryptoPairs.Models;
-using System.Collections.Generic;
-using System.IO;
 
 namespace CryptoPairs.Services
 {
