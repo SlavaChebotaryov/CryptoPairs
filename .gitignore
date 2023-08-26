@@ -1,4 +1,4 @@
-obj/
+CryptoPairs/obj/
 
 # Игнорировать папку bin и все её содержимое
 bin/
