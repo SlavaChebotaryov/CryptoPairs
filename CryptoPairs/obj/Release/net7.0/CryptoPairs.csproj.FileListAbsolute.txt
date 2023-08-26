@@ -1,9 +1,10 @@
+C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\web.config
 C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\appsettings.Development.json
 C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\appsettings.json
-C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\CryptoPairs.staticwebassets.runtime.json
-C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\CryptoPairs.exe
 C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\CryptoPairs.deps.json
 C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\CryptoPairs.runtimeconfig.json
+C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\CryptoPairs.staticwebassets.runtime.json
+C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\CryptoPairs.exe
 C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\CryptoPairs.dll
 C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\CryptoPairs.pdb
 C:\Users\user\source\repos\CryptoPairs\CryptoPairs\obj\Release\net7.0\CryptoPairs.GeneratedMSBuildEditorConfig.editorconfig
@@ -26,4 +27,3 @@ C:\Users\user\source\repos\CryptoPairs\CryptoPairs\obj\Release\net7.0\refint\Cry
 C:\Users\user\source\repos\CryptoPairs\CryptoPairs\obj\Release\net7.0\CryptoPairs.pdb
 C:\Users\user\source\repos\CryptoPairs\CryptoPairs\obj\Release\net7.0\CryptoPairs.genruntimeconfig.cache
 C:\Users\user\source\repos\CryptoPairs\CryptoPairs\obj\Release\net7.0\ref\CryptoPairs.dll
-C:\Users\user\source\repos\CryptoPairs\CryptoPairs\bin\Release\net7.0\web.config

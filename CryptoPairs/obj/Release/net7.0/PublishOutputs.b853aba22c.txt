@@ -1,7 +1,0 @@
-C:\Users\user\source\repos\CryptoPairs\CryptoPairs\CryptoPairs.exe
-C:\Users\user\source\repos\CryptoPairs\CryptoPairs\appsettings.Development.json
-C:\Users\user\source\repos\CryptoPairs\CryptoPairs\appsettings.json
-C:\Users\user\source\repos\CryptoPairs\CryptoPairs\CryptoPairs.dll
-C:\Users\user\source\repos\CryptoPairs\CryptoPairs\CryptoPairs.deps.json
-C:\Users\user\source\repos\CryptoPairs\CryptoPairs\CryptoPairs.runtimeconfig.json
-C:\Users\user\source\repos\CryptoPairs\CryptoPairs\CryptoPairs.pdb
