@@ -1,7 +1,7 @@
-CryptoPairs/obj/
+CryptoPairs/CryptoPairs/obj/
 
 # Игнорировать папку bin и все её содержимое
-bin/
+CryptoPairs/CryptoPairsbin/
 
 # Игнорировать файлы с расширением .log
 *.log
