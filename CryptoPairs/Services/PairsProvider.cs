@@ -5,22 +5,28 @@ namespace CryptoPairs.Services
 {
 	public class PairsProvider : IPairsProvider
 	{
+		private const int QuantityPerPage = 20;
 		private readonly IEnumerable<CryptoCurrency> _cryptoCurrencies;
+		private readonly int cryptoCurrenciesCount;
+		private readonly uint numberOfPairs;
+		public PairsProvider(IEnumerable<CryptoCurrency> cryptoCurrencies)
+		{
+			_cryptoCurrencies = cryptoCurrencies;
+			cryptoCurrenciesCount = cryptoCurrencies.Count();
+			numberOfPairs = this.Count();
+		}
+		public uint Count() => (uint)(_cryptoCurrencies.Count() * (_cryptoCurrencies.Count() - 1) / 2);
 
-		public PairsProvider(IEnumerable<CryptoCurrency> cryptoCurrencies) => _cryptoCurrencies = cryptoCurrencies;
-
-		public uint Count() => (uint)(_cryptoCurrencies.Count()* (_cryptoCurrencies.Count() - 1) / 2);
-							
 		public IEnumerable<string> GetPairs(int page)
 		{
 			var (ExternalIndex, InternalIndex) = SerchIndexes(page);
-			int itemsPerPage = 20;
-
+			int itemsPerPage = QuantityPerPage;
+			int currenciesCount = cryptoCurrenciesCount;
 			var pairs = new List<string>();
 
-			for (; ExternalIndex < _cryptoCurrencies.Count() - 1; ExternalIndex++)
+			for (; ExternalIndex < currenciesCount - 1; ExternalIndex++)
 			{
-				for (; InternalIndex < _cryptoCurrencies.Count(); InternalIndex++, itemsPerPage--)
+				for (; InternalIndex < currenciesCount; InternalIndex++, itemsPerPage--)
 				{
 					var pair = $"{_cryptoCurrencies.ElementAt(ExternalIndex).Name}-{_cryptoCurrencies.ElementAt(InternalIndex).Name}";
 					pairs.Add(pair);
@@ -36,11 +42,10 @@ namespace CryptoPairs.Services
 		}
 		private (int, int) SerchIndexes(int page)
 		{
-			var elementsToCurrentPage = (uint)(page * 20 - 20);
-			var currenciesCount = _cryptoCurrencies.Count();
-			var numbernumberOfPairs = this.Count();
+			var elementsToCurrentPage = (uint)(page * QuantityPerPage - QuantityPerPage);
+			var currenciesCount = cryptoCurrenciesCount;
 
-			if (numbernumberOfPairs / 2 > elementsToCurrentPage)
+			if (numberOfPairs / 2 > elementsToCurrentPage)
 			{
 				for (int ExternalIndex = 0; ExternalIndex < currenciesCount; ExternalIndex++)
 				{
@@ -51,14 +56,14 @@ namespace CryptoPairs.Services
 					}
 				}
 			}
-			if (elementsToCurrentPage > numbernumberOfPairs) elementsToCurrentPage = numbernumberOfPairs;
+			if (elementsToCurrentPage > numberOfPairs) elementsToCurrentPage = numberOfPairs;
 
 			for (int ExternalIndex = currenciesCount - 1; ExternalIndex >= 0; ExternalIndex--)
 			{
 
 				for (int InternalIndex = currenciesCount - 1; InternalIndex > ExternalIndex; InternalIndex--, elementsToCurrentPage++)
 				{
-					if (elementsToCurrentPage == numbernumberOfPairs) return (ExternalIndex, InternalIndex);
+					if (elementsToCurrentPage == numberOfPairs) return (ExternalIndex, InternalIndex);
 				}
 			}
 
@@ -67,7 +72,7 @@ namespace CryptoPairs.Services
 		}
 		public IEnumerable<int> GetPaginationRange(int currentPage, int totalPages)
 		{
-			List<int> visiblePages = new List<int>();
+			List<int> visiblePages = new();
 
 			for (int i = 1; i <= Math.Min(3, totalPages); i++)
 			{
