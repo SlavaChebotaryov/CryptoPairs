@@ -15,7 +15,7 @@ namespace CryptoPairs.Services
 			cryptoCurrenciesCount = cryptoCurrencies.Count();
 			numberOfPairs = this.Count();
 		}
-		public uint Count() => (uint)(_cryptoCurrencies.Count() * (_cryptoCurrencies.Count() - 1) / 2);
+		public uint Count() => ((uint)cryptoCurrenciesCount * ((uint)cryptoCurrenciesCount - 1)) / 2;
 
 		public IEnumerable<string> GetPairs(int page)
 		{
